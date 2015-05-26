@@ -44,3 +44,10 @@ group :development, :test do
 end
 
 gem "slack-api"
+gem 'cumulus', git: 'git@github.com:simplybusiness/cumulus.git', require: false
+gem 'iodide', git: 'git@github.com:simplybusiness/iodide.git', require: false
+gem 'peephole', git: 'git@github.com:simplybusiness/peephole.git', require: false
+gem "capistrano"
+gem "capistrano-bundler"
+gem "capistrano3-unicorn"
+gem "unicorn"
