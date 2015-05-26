@@ -16,6 +16,7 @@ class ChannelsController < ApplicationController
     channel_name = params[:name]
     text = params[:text]
     channel = Slack.channels_join(name: channel_name)["channel"]
+    config = Rails.configuration.degenerate["slack"]
 
     Slack.chat_postMessage(channel: channel["id"],
                            text: text,
