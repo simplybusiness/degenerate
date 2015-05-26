@@ -2,6 +2,11 @@
 lock '3.4.0'
 
 set :application, 'degenerate'
+
+# to avoid creating a zillion new identical github repos, for the
+# purpose of this levelup we direct capistrano to the git repo on
+# your own Macintosh
+
 set :repo_url, ENV['USER']+'@192.168.30.1:'+__dir__+'/..'
 
 set :ssh_options, {
