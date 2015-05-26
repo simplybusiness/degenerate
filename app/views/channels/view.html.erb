@@ -1,1 +1,17 @@
-hello <%= @channel_name %> from view
+<h1> <%= @channel_name %> </h1>
+
+<ul>
+<% @messages.reverse.each do |m| %>
+<li> <%= m["text"] %> at <%= Time.at(m["ts"].to_f).to_s %> </li>
+<% end %>
+</ul>
+
+<%= form_tag do %>
+  <label>Say something! 
+    <input name="name" type="hidden" value="<%= @channel_name %>" >
+    <input name="text" type="text" size="60"
+           placeholder="Your message here">
+  </label>
+<% end %>
+
+

@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'channels#view', defaults: { name: "cumulus-levelup" }
+  root to: redirect('/channels/cumulus-levelup')
 
-  # Example of regular route:
   get 'channels/:name' => 'channels#view'
+  post 'channels/:name' => 'channels#post_message'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
