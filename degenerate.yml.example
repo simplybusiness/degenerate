@@ -1,0 +1,4 @@
+slack:
+  token: go-to-https://api.slack.com/web-and-make-a-test-api-token
+  channel: cumulus-levelup
+  username: Washington Irving
