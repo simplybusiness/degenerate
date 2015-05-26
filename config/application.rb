@@ -22,5 +22,11 @@ module Degenerate
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # read application config from some file which Puppet will create
+    filename = ENV['DEGENERATE_CONFIG'] || "/etc/degenerate.yml"
+    if File.exist?(filename)
+      config.degenerate = YAML.load_file(filename)
+    end
   end
 end
